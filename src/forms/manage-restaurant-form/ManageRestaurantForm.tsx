@@ -9,6 +9,8 @@ import MenuSection from "./MenuSection";
 import ImageSection from "./ImageSection";
 import LoadingButton from "@/components/LoadingButton";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { Restaurant } from "@/types";
 
 const formSchema = z.object({
     restaurantName: z.string({
@@ -38,7 +40,10 @@ const formSchema = z.object({
         price: z.coerce.number().min(1, " is required")
 
     })),
-    imageFile: z.instanceof(File, {message:"image is required"})
+    imageUrl: z.string().optional(),
+    imageFile: z.instanceof(File, {message:"image is required"}).optional()
+}).refine((data)=> data.imageUrl || data.imageFile,{message:"Either image URL or image file must be provided", 
+  path: ["imageFile"]
 })
 
 type RestaurantFormData = z.infer<typeof formSchema>
@@ -47,13 +52,14 @@ type RestaurantFormData = z.infer<typeof formSchema>
 
 
 type Props = {
+    restaurant?:Restaurant;
     onSave: (restaurantFormData:FormData )=> void;
     isLoading:boolean;
 };
 
 
 
- const ManageRestaurantForm = ({onSave, isLoading}: Props) => {
+ const ManageRestaurantForm = ({onSave, isLoading, restaurant}: Props) => {
     const form = useForm<RestaurantFormData>({
         resolver:zodResolver(formSchema),
         defaultValues:{
@@ -61,6 +67,30 @@ type Props = {
             menuItems:[{name: "" , price:0 }]
         }
     })
+
+    useEffect(() => {
+      if (!restaurant || !restaurant.menuItems) {
+        return;
+      }
+    
+      const deliveryPriceFormatted = parseInt(
+        (restaurant.deliveryPrice / 100).toFixed(2)
+      );
+    
+      const menuItemsFormatted = restaurant.menuItems.map((item) => ({
+        ...item,
+        price: typeof item.price === 'number' ? parseInt((item.price / 100).toFixed(2)) : 0,
+      }));
+    
+      const updatedRestaurant = {
+        ...restaurant,
+        deliveryPrice: deliveryPriceFormatted,
+        menuItems: menuItemsFormatted,
+      };
+    
+      form.reset(updatedRestaurant);
+    }, [form, restaurant]);
+    
 
 const onSubmit = (formDataJson:RestaurantFormData)=>{
     // convert formDataJson to a new FormData Object
@@ -111,7 +141,7 @@ const onSubmit = (formDataJson:RestaurantFormData)=>{
                <CuisinesSection/>
                <Separator/>
                <MenuSection/>
-               <ImageSection/>
+               <ImageSection />
                {isLoading ? <LoadingButton/> : <Button type="submit">Submit</Button>}
             </form>
 
