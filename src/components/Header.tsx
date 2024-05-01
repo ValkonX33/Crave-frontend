@@ -11,9 +11,9 @@ const Header = () => {
     <div>
    
 <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-  <nav className="   sticky top-0 flex-row   mt-6  max-w-[85rem] w-full bg-white border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto " aria-label="Global">
+  <nav className="   sticky top-0 flex-row   mt-6  max-w-[85rem] w-full bg-white  mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto " aria-label="Global">
     <div className="flex items-center justify-between w-1/3">
-      <Link className="flex-none text-xl font-semibold dark:text-white text-orange-500 "  to="/" aria-label="Brand">Crave</Link>
+      <Link className="flex-none text-3xl font-semibold dark:text-white text-orange-500 "  to="/" aria-label="Brand">Crave</Link>
 
 
     </div>

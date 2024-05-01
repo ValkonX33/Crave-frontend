@@ -1,3 +1,5 @@
+
+
 const Hero = () => {
   return (
     <>
@@ -65,9 +67,9 @@ const Hero = () => {
 
 
 
-
       </div>
     </div>
+    
     </>
   )
 }

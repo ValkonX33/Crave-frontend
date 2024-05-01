@@ -1,9 +1,32 @@
 import landing from "../assets/landing.png"
 import appDownload from "../assets/appDownload.png"
-const HomePage = () => {
-  return (
-    <div className="flex felx-col gap-12" >
+import SearchBar, { SearchForm } from "@/components/SearchBar"
+import { useNavigate } from "react-router-dom"
 
+const HomePage = () => {
+  const navigate = useNavigate()
+  const handleSearchSubumit = (searchFormValues:SearchForm) =>{
+      navigate({
+        pathname: `/search/${searchFormValues.searchQuery}`
+      })
+  }
+  return (
+    <>
+  
+<br/>
+<br/>
+<br/>
+<br/>
+<div className=" md:px-28">
+<SearchBar placeHolder="Search by City Name or Town" onSubmit={handleSearchSubumit}  />
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+    <div className="flex felx-col gap-12 mt-10" >
+    
+  
 
     <div className="grid md:grid-cols-2 gap-5">
 
@@ -28,6 +51,7 @@ const HomePage = () => {
 
 
     </div>
+    </>
   )
 }
 
