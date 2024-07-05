@@ -18,7 +18,7 @@ const HomePage = () => {
 <br/>
 <br/>
 <div className=" md:px-28">
-<SearchBar placeHolder="Search by City Name or Town" onSubmit={handleSearchSubumit}  />
+<SearchBar placeHolder="Search by City Name or Town" onSubmit={handleSearchSubumit} searchQuery="Search" />
 </div>
 <br/>
 <br/>
