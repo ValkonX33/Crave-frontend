@@ -13,7 +13,7 @@ const Hero = () => {
         </div>
 
         <div className="relative md:ml-20  ">
-          <img src="src/assets/food.jpg" alt="" className="rounded-full w-[65vw] md:w-[33vw] h-[45vh] md:h-[70vh] object-cover" />
+          <img src="https://res.cloudinary.com/dpprgvafz/image/upload/v1720196951/food1_x1ifpm.jpg" alt="" className="rounded-full w-[65vw] md:w-[33vw] h-[45vh] md:h-[70vh] object-cover" />
           <div className=" hidden absolute top-10 md:top-0  text-nowrap right-4 z-10 font-semibold items-center p-3 justify-start bg-white rounded-full w-[200px] h-[50px] md:flex ">
             5.0 Ratings &nbsp; ⭐⭐⭐⭐⭐
           </div>
