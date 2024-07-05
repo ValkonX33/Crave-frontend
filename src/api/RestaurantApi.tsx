@@ -10,6 +10,7 @@ const createSearchRequest = async ():Promise<RestaurnatSearchResponse>  =>{
   params.set("searchQuery", searchState.searchQuery)
   params.set("page", searchState.page.toString())
   params.set("selectedCuisines", searchState.selectedCuisines.join(","))
+  params.set("sortOption", searchState.sortOption)
   const response = await fetch(`${API_BASE_URL}/api/restaurant/search/${city}?${params.toString()}`);
 
       if(!response.ok){

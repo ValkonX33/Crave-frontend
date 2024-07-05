@@ -50,7 +50,7 @@ const handleReset = ()=>{
     return (
         <Form {...form} >
             <form onSubmit={form.handleSubmit(onSubmit)} className={`
-            flex items-center flex-1 gap-3 justify-between flex-row border-2 rounded-full p-3 mx-5
+            flex items-center gap-3 justify-between flex-row border-2 rounded-full p-3 
             ${form.formState.errors.searchQuery && "border-red-500" }
             `} >
 
@@ -59,6 +59,7 @@ const handleReset = ()=>{
                     <FormControl>
                         <Input {...field} className="border-none shadow-none text-xl focus-visible:ring-0"
                         placeholder={placeHolder}
+                        
                         />
                     </FormControl>
 
