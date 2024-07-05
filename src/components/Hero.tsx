@@ -1,4 +1,6 @@
-
+import boy from "../assets/boy.png"
+import verified from "../assets/verified.png"
+import woman from "../assets/woman.png"
 
 const Hero = () => {
   return (
@@ -21,11 +23,11 @@ const Hero = () => {
         <div className="hidden absolute top-80 left-1.5 transform -translate-x-1/2 z-10    justify-start    bg-slate-200  rounded-2xl w-[200px] h-[150px] opacity-75 md:flex md:flex-col">
           <div className="h-[20px] w-[85px] bg-orange-500 text-white font-medium text-[13px] rounded-tl-lg">⭐ 4.6 (456) </div>
           <div className="flex flex-row">
-          <img src="src/assets/boy.png" alt="" className="h-[4vh] w-[2vw] mt-4 mr-3 ml-3" />
+          <img src={boy} alt="" className="h-[4vh] w-[2vw] mt-4 mr-3 ml-3" />
          
           <div className="relative mt-3 text-[10px]">
   <span className="text-sm font-medium">Italian Pasta</span>
-  <img src="src/assets/verified.png" alt="" className="h-[2vh] w-[1vw] absolute top-1 right-[-16px]" />
+  <img src={verified} alt="" className="h-[2vh] w-[1vw] absolute top-1 right-[-16px]" />
   <br />
   Today at 12:00 PM
 </div>
@@ -44,11 +46,11 @@ const Hero = () => {
         <div className="hidden absolute bottom-0 right-0 z-10 bg-slate-200 rounded-2xl w-[210px] h-[150px] opacity-75 md:flex  md:flex-col">
   <div className="h-[20px] w-[85px] bg-orange-500 text-white font-medium text-[13px] rounded-tl-lg">⭐ 4.4 (246) </div>
   <div className="flex flex-row">
-    <img src="src/assets/woman.png" alt="" className="h-[4vh] w-[2vw] mt-4 mr-3 ml-3" />
+    <img src={woman} alt="" className="h-[4vh] w-[2vw] mt-4 mr-3 ml-3" />
   
     <div className="relative mt-3 text-[10px]">
       <span className="text-[11px] font-medium mr-1">Mamma Mia's Spaghetti</span>
-      <img src="src/assets/verified.png" alt="" className="h-[2vh] w-[1vw] absolute top-0 right-[-16px] " />
+      <img src={verified} alt="" className="h-[2vh] w-[1vw] absolute top-0 right-[-16px] " />
       <br />
       Today at 3:10 PM
     </div>
