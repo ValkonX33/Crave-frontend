@@ -11,6 +11,7 @@ import LoadingButton from "@/components/LoadingButton";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { Restaurant } from "@/types";
+import res from "../../assets/res.jpg"
 
 const formSchema = z.object({
     restaurantName: z.string({
@@ -134,7 +135,7 @@ const onSubmit = (formDataJson:RestaurantFormData)=>{
             <div className="flex flex-col md:flex-row gap-15">
                <DetailsSection/>
                <div>
-                <img src="src/assets/res.jpg" className="md:h-[60vh]" />
+                <img src={res}className="md:h-[60vh]" />
                </div>
                </div>
                <Separator/>
