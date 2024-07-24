@@ -1,4 +1,4 @@
-import { useSearchRestaurant } from "@/api/RestaurantApi"
+import { useSearchRestaurants } from "@/api/RestaurantApi"
 import CuisineFilter from "@/components/CuisineFilter"
 import PaginationSelector from "@/components/PaginationSelector"
 import SearchBar, { SearchForm } from "@/components/SearchBar"
@@ -22,7 +22,7 @@ const SearchPage = () => {
       sortOption: "bestMatch",
     })
     const {city} = useParams()
-    const {results, isLoading} = useSearchRestaurant(searchState,city)
+    const {results, isLoading} = useSearchRestaurants(searchState,city)
     const [isExpanded, setIsExpanded] = useState<boolean>(false)
     console.log("results", results) 
 
