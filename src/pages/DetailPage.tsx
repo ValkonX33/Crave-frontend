@@ -11,7 +11,7 @@ import CheckoutButton from "@/components/CheckoutButton";
 import { UserFormData } from "@/forms/user-profile-forms/UserProfileForm";
 import { useCreateCheckoutSession } from "@/api/OrderApi";
 import RestaurantInfo from "@/components/RestaurantInfo";
-import MenuItem from "@/components/MenuItem";
+import MenuItems from "@/components/MenuItem";
 
 export type CartItem = {
   _id: string;
@@ -123,7 +123,7 @@ const DetailPage = () => {
           <RestaurantInfo restaurant={restaurant} />
           <span className="text-2xl font-bold tracking-tight">Menu</span>
           {restaurant.menuItems.map((menuItem) => (
-            <MenuItem
+            <MenuItems
               menuItem={menuItem}
               addToCart={() => addToCart(menuItem)}
             />
